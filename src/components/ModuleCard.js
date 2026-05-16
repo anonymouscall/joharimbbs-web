@@ -30,8 +30,8 @@ export default function ModuleCard({ product }) {
         <p>{product.description}</p>
         <div className="module-price">
           <span>₹{product.price}</span>
-          <div style={{ display: 'flex', gap: '10px' }}>
-            <Link href={`/modules/${product.slug}`} style={{ color: 'var(--secondary)', textDecoration: 'none', fontSize: '0.9rem', display: 'flex', alignItems: 'center' }}>View Details</Link>
+          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'flex-end' }}>
+            <Link href={`/modules/${product.slug}`} style={{ color: 'var(--secondary)', textDecoration: 'none', fontSize: '0.8rem', display: 'flex', alignItems: 'center' }}>View Details</Link>
             <button className="btn-cart" onClick={handleAdd}>Add to Cart</button>
           </div>
         </div>

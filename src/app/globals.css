@@ -322,6 +322,8 @@ header.scrolled {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 /* Cart & UI Additions */
@@ -364,11 +366,11 @@ header.scrolled {
   background: var(--surface);
   color: var(--secondary);
   border: 1px solid var(--secondary);
-  padding: 0.4rem 1rem;
+  padding: 0.3rem 0.8rem;
   border-radius: 50px;
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
