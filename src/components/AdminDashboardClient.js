@@ -18,7 +18,7 @@ export default function AdminDashboardClient({ initialOrders, initialMessages })
   }, [status, session, router]);
 
   if (status === "loading" || !session || session.user.role !== "ADMIN") {
-    return <div className="container" style={{paddingTop: '120px'}}>Loading Admin Dashboard...</div>;
+    return <div className="container" style={{paddingTop: '180px'}}>Loading Admin Dashboard...</div>;
   }
 
   const exportToExcel = () => {
@@ -43,7 +43,7 @@ export default function AdminDashboardClient({ initialOrders, initialMessages })
   };
 
   return (
-    <div className="container" style={{ paddingTop: '120px', minHeight: '80vh' }}>
+    <div className="container" style={{ paddingTop: '180px', minHeight: '80vh' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
         <h2>Admin Dashboard</h2>
         <p>Welcome, {session.user.name}</p>
@@ -63,7 +63,8 @@ export default function AdminDashboardClient({ initialOrders, initialMessages })
             </button>
           </div>
           
-          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+          <div style={{ overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '600px' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #eee' }}>
                 <th style={{ padding: '1rem 0' }}>Date</th>
@@ -93,6 +94,7 @@ export default function AdminDashboardClient({ initialOrders, initialMessages })
               )}
             </tbody>
           </table>
+          </div>
         </div>
       )}
 

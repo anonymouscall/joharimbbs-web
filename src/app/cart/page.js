@@ -83,7 +83,7 @@ export default function CartPage() {
     <>
       <Script src="https://checkout.razorpay.com/v1/checkout.js" strategy="lazyOnload" />
       
-      <div className="container" style={{ paddingTop: '120px', minHeight: '80vh' }}>
+      <div className="container" style={{ paddingTop: '180px', minHeight: '80vh' }}>
         <h2>Your Cart</h2>
         
         {paymentStatus === 'success' && (
@@ -104,7 +104,7 @@ export default function CartPage() {
           <p style={{ marginTop: '2rem' }}>Your cart is empty. Go back and add some modules!</p>
         ) : (
           !paymentStatus && (
-            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '3rem', marginTop: '3rem' }}>
+            <div className="cart-grid">
               <div>
                 {cartItems.map((item) => (
                   <div key={item.id} style={{ display: 'flex', justifyContent: 'space-between', padding: '1.5rem', background: 'white', borderRadius: '12px', marginBottom: '1rem', boxShadow: '0 4px 10px rgba(0,0,0,0.05)' }}>

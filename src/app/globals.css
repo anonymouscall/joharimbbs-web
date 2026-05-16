@@ -541,9 +541,23 @@ header.scrolled {
   align-items: center;
 }
 
+/* Cart Responsiveness */
+.cart-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
 @media (max-width: 768px) {
   .product-detail-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .cart-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
   }
 }
