@@ -481,6 +481,12 @@ header.scrolled {
   .module-img {
     height: 180px;
   }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: none !important;
+  }
 }
 
 /* Product Detail Page Responsiveness */
