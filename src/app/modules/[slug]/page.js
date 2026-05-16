@@ -21,7 +21,7 @@ export default async function ProductPage({ params }) {
   }
 
   return (
-    <div className="container" style={{ paddingTop: '180px', minHeight: '80vh' }}>
+    <div className="container apple-transition" style={{ paddingTop: '180px', minHeight: '80vh' }}>
       <div className="product-detail-grid">
         
         {/* Product Image */}
