@@ -4,6 +4,8 @@ import prisma from "@/lib/prisma";
 import AdminDashboardClient from "../../components/AdminDashboardClient";
 import { handler as authOptions } from "../api/auth/[...nextauth]/route";
 
+export const dynamic = 'force-dynamic';
+
 // In NextAuth 13+, to use getServerSession we usually extract authOptions to a separate file, but here we can just pass the imported config or fetch blindly and check session on client, or we can fetch the session differently.
 // Let's create a cleaner way:
 

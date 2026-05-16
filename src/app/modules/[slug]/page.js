@@ -2,12 +2,7 @@ import prisma from '@/lib/prisma';
 import { notFound } from 'next/navigation';
 import AddToCartButton from '../../../components/AddToCartButton';
 
-export async function generateStaticParams() {
-  const products = await prisma.product.findMany();
-  return products.map((product) => ({
-    slug: product.slug,
-  }));
-}
+export const dynamic = 'force-dynamic';
 
 export default async function ProductPage({ params }) {
   const { slug } = await params;
