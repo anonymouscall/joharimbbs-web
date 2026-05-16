@@ -39,9 +39,13 @@ model Order {
   razorpayOrderId String?  @unique
   total           Float
   status          String   @default("PENDING") // PENDING, SUCCESS, FAILED
-  items           String   // JSON string of cart items
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  shippingAddress String?   // Full shipping address
+  customerName    String?   // Name of recipient
+  customerPhone   String?   // Phone number for delivery
+  customerEmail   String?   // Email for receipt and contact
+  items           String    @default("[]") // JSON string of cart items
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
 }
 
 model MarketingMessage {
