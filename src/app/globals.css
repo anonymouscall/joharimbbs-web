@@ -430,6 +430,19 @@ header.scrolled {
   .modules {
     padding: 4rem 0;
   }
+
+  .module-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .module-card {
+    padding: 1.5rem;
+  }
+
+  .module-img {
+    height: 180px;
+  }
 }
 
 /* Product Detail Page Responsiveness */
