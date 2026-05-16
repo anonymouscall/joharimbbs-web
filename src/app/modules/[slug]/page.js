@@ -22,7 +22,7 @@ export default async function ProductPage({ params }) {
 
   return (
     <div className="container" style={{ paddingTop: '120px', minHeight: '80vh' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+      <div className="product-detail-grid">
         
         {/* Product Image */}
         <div style={{ background: '#f5f5f5', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>

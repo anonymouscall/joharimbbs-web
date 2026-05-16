@@ -24,7 +24,7 @@ export default function Navbar() {
     <header className={scrolled ? 'scrolled' : ''}>
       <div className="container nav-container">
         <Link href="/" className="logo">
-          <img src="https://joharimbbs.com/wp-content/uploads/2022/11/Johri-mbbs-2-1.png" alt="Johari MBBS Logo" style={{ height: '40px', width: 'auto' }} />
+          <img src="/logo.png" alt="Johari MBBS Logo" style={{ height: '40px', width: 'auto' }} />
         </Link>
         <ul className="nav-links">
           <li><Link href="/">Home</Link></li>
