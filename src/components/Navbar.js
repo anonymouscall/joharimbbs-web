@@ -46,13 +46,13 @@ export default function Navbar() {
           
           {session ? (
             <div style={{ display: 'flex', gap: '10px' }}>
-              <Link href="/admin" className="btn btn-outline" style={{ padding: '0.5rem 1rem' }}>Dashboard</Link>
-              <button onClick={() => signOut()} className="btn btn-primary" style={{ padding: '0.5rem 1rem' }}>Logout</button>
+              <Link href="/admin" className="btn-nav-outline">Dashboard</Link>
+              <button onClick={() => signOut()} className="btn-nav-primary">Logout</button>
             </div>
           ) : (
             <div style={{ display: 'flex', gap: '10px' }}>
-              <Link href="/login" className="btn btn-outline" style={{ padding: '0.5rem 1rem' }}>Log In</Link>
-              <Link href="/signup" className="btn btn-primary" style={{ padding: '0.5rem 1rem' }}>Sign Up</Link>
+              <Link href="/login" className="btn-nav-outline">Log In</Link>
+              <Link href="/signup" className="btn-nav-primary">Sign Up</Link>
             </div>
           )}
         </div>

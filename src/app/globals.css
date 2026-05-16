@@ -86,6 +86,38 @@ h1, h2, h3, h4 {
   color: var(--primary);
 }
 
+.btn-nav-outline {
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  display: inline-block;
+}
+.btn-nav-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-nav-primary {
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  border: none;
+  display: inline-block;
+}
+.btn-nav-primary:hover {
+  background: var(--secondary);
+}
+
 /* Header */
 header {
   position: fixed;
@@ -404,23 +436,29 @@ header.scrolled {
     width: 100%;
   }
   
-  .btn {
+  .hero-btns .btn {
     width: 100%;
   }
 
   .nav-container {
     height: auto;
-    padding: 1rem 0;
-    flex-wrap: wrap;
+    padding: 1rem;
+    flex-direction: column;
     gap: 1rem;
   }
 
   .nav-links {
-    order: 3;
     width: 100%;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
     font-size: 0.9rem;
+  }
+
+  .nav-actions {
+    width: 100%;
+    justify-content: center;
+    gap: 1rem !important;
   }
 
   .section-header h2 {
