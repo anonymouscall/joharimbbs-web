@@ -24,14 +24,13 @@ export default function Navbar() {
     <header className={scrolled ? 'scrolled' : ''}>
       <div className="container nav-container">
         <Link href="/" className="logo">
-          <div className="logo-icon">J</div>
-          Johari MBBS
+          <img src="https://joharimbbs.com/wp-content/uploads/2022/11/Johri-mbbs-2-1.png" alt="Johari MBBS Logo" style={{ height: '40px', width: 'auto' }} />
         </Link>
         <ul className="nav-links">
           <li><Link href="/">Home</Link></li>
           <li><Link href="/#modules">Modules</Link></li>
-          <li><Link href="#courses">Courses</Link></li>
-          <li><Link href="#testimonials">Testimonials</Link></li>
+          <li><Link href="https://web.joharimbbslectures.com/courses" target="_blank" rel="noopener noreferrer">Courses</Link></li>
+          <li><Link href="/#testimonials">Testimonials</Link></li>
         </ul>
         <div className="nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
           <div className="cart-icon" onClick={() => router.push('/cart')}>
