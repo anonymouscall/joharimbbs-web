@@ -1,66 +1,33 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import prisma from '@/lib/prisma';
+import ProductList from '../components/ProductList';
 
-export default function Home() {
+export default async function Home() {
+  const products = await prisma.product.findMany();
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <section className="hero" id="home">
+        <div className="container hero-content">
+            <div className="hero-badge animate-fade-up" style={{animationDelay: '0.2s'}}>⭐ Over 300,000+ Students Nationwide</div>
+            <h1 className="animate-fade-up" style={{animationDelay: '0.4s'}}>Master MBBS <br/><span className="text-gradient">With Confidence</span></h1>
+            <p className="animate-fade-up" style={{animationDelay: '0.6s'}}>Elevating medical education in India. Stop memorizing, start understanding with our high-yield modules, handcrafted diagrams, and premium clinical insights.</p>
+            <div className="hero-btns animate-fade-up" style={{animationDelay: '0.8s'}}>
+                <a href="#modules" className="btn btn-primary">Explore Modules</a>
+                <a href="#courses" className="btn btn-outline">Join Live Classes</a>
+            </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="modules reveal" id="modules">
+        <div className="container">
+            <div className="section-header">
+                <h2>Premium Study Modules</h2>
+                <p>The definitive resource for acing your university exams, featuring clinical anatomy, bone charts, and high-yield MCQs.</p>
+            </div>
+            
+            <ProductList products={products} />
         </div>
-      </main>
-    </div>
+      </section>
+    </>
   );
 }

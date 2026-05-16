@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String?
+  email     String   @unique
+  password  String
+  role      String   @default("USER") // ADMIN or USER
+  orders    Order[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String
+  price       Float
+  imageUrl    String?
+  category    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Order {
+  id              String   @id @default(cuid())
+  userId          String?
+  user            User?    @relation(fields: [userId], references: [id])
+  guestEmail      String?
+  razorpayOrderId String?  @unique
+  total           Float
+  status          String   @default("PENDING") // PENDING, SUCCESS, FAILED
+  items           String   // JSON string of cart items
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model MarketingMessage {
+  id           String   @id @default(cuid())
+  triggerEvent String   @unique // e.g., 'PURCHASE_SUCCESS', 'PAYMENT_FAILED', 'CART_ABANDONED'
+  messageBody  String
+  channel      String   @default("EMAIL") // EMAIL or WHATSAPP
+  isActive     Boolean  @default(true)
+  updatedAt    DateTime @updatedAt
+}
